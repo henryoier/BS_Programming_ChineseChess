@@ -1,5 +1,5 @@
 # BS_Programming_ChineseChess
-Using node.js create an online chinese chess game
+Using node.js create an online chinese chess game  
 1 运行环境  
 本游戏前端由HTML5内嵌JavaScript，后台由node.js实现，连接mysql数据库。  
   
