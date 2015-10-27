@@ -1,0 +1,51 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>HTML5实现中国象棋游戏</title>
+<link href="css/zzsc.css" type="text/css" rel="stylesheet" />
+<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+</head>
+
+<script src="js/websocket.js"></script>
+
+<body>
+<div class="box" id="box">
+	<div class="chess_left">
+		<canvas id="chess">对不起，您的浏览器不支持HTML5，请升级浏览器至IE9、firefox或者谷歌浏览器！</canvas>
+		<audio src="audio/click.wav" id="clickAudio" preload="auto"></audio>
+		<!--<audio src="audio/check.wav" id="checkAudio" preload="auto"></audio>-->
+		<audio src="audio/select.wav" id="selectAudio" preload="auto"></audio>
+		<div>
+			<div class="bn_box" id="bnBox">
+				<input type="button" class='btn' name="offensivePlay" id="tyroPlay" value="开始游戏" />
+				<input type="button" class='btn' name="Rank" onclick="Rank()" value="查看排行榜" />
+			</div>
+		</div>
+	</div>
+</div>
+</br>
+</br>
+</br>
+<h2><font color='#ffffff'>聊天室</font></h2>
+<div id="chat-box" style="border:1px solid #cccccc; background-color:#ffffff; width:400px; height:400px; overflow:scroll;"></div>
+</br>
+<font color='#ffffff' size="3px">&nbsp;Input:&nbsp;</font><input type="text" value='' class="form-inline"id="talk"/>
+<input type="button" class="btn" id="send" onClick="sendtext();" value="send"/>
+
+<script src="js/common.js"></script> 
+<script src="js/play.js"></script> 
+<script>
+function sendtext(){
+    var text = document.getElementById('talk').value;
+    document.getElementById('talk').value = '';
+    document.getElementById("chat-box").innerHTML +=
+                    '<strong style="color:blue">'+ name +':</strong>'+ text + '</br>';
+    send('chat,'+ name + ','+ text);
+}
+
+function Rank(){
+	window.location.href = './rank.html';
+}
+</script> 
+</body>
+</html>
